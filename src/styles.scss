@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+$red: #ed6a57;
+$green: #5bc1a7;
+$blue: #00bad6;
+$blue-300: #00dafc;
+$yellow: #fdc64d;
+$info-blue: #5ac9f5;
+$disabled: #dddddd;
+$dark-gray: #676a6c;
+
+$theme-colors: (
+  "primary": $blue,
+  "success": $green,
+  "warning": $yellow,
+  "danger": $red,
+  "secondary": #b3b3b3,
+  "info": $blue
+);
+
+/* using Sass */
+@import "~bootstrap/scss/bootstrap";
