@@ -8,15 +8,29 @@ $yellow: #fdc64d;
 $info-blue: #5ac9f5;
 $disabled: #dddddd;
 $dark-gray: #676a6c;
+$primary: #32746D;
+$shade: #104F55;
+$grey: #E3E4DB;
 
 $theme-colors: (
-  "primary": $blue,
+  "primary": $primary,
   "success": $green,
   "warning": $yellow,
   "danger": $red,
-  "secondary": #b3b3b3,
-  "info": $blue
+  "secondary": $grey,
+  "info": $blue,
+  "shade": $shade,
+
 );
 
 /* using Sass */
 @import "~bootstrap/scss/bootstrap";
+
+
+body {
+  background-color: $grey;
+}
+
+.bg-white {
+   background-color: white;
+}

@@ -1,3 +1,13 @@
-<p>
-  book-details works!
-</p>
+<div class="container d-flex bg-white deets justify-content-center">
+  <div class="row" *ngIf="loaded" >
+    <div class="align-self-center text-center col-3">
+        <img class=" p-2 book-img " [src]=currentBook.imageLinks.thumbnail/>
+    </div>
+    
+    <div class="p-2 col-8" >
+      <h3>{{currentBook.title}}</h3>
+      <h5>{{currentBook.authors[0]}}</h5>
+      <p class="small">{{currentBook.description}}</p>
+    </div>
+  </div>
+</div>

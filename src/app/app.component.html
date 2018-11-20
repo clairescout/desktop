@@ -1,22 +1,29 @@
-
-<!-- app.component.html -->
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some quick example text ...</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-8">
-      <h1>Example heading
-        <span class="badge badge-secondary">New</span>
-      </h1>
+<nav class="navbar navbar-dark bg-primary mb-5">
+  <a class="navbar-brand " href="/">LOGO HERE</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active text-right" routerLink="submit-review">Submit a Review</a>
     </div>
   </div>
-</div>
+  <!-- <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
+        <i class="fa fa-medium"></i>
+      </a>
+    </div>
+  </div> -->
+</nav>
 
-<router-outlet></router-outlet>
+<router-outlet class="mb-10"></router-outlet>
+
+<!-- <nav class="navbar navbar-dark bg-primary mt-15 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text">
+    Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/beeman_nl">claire bear. THIS IS FROM A TUTORIAL</a>
+  </div>
+</nav> -->

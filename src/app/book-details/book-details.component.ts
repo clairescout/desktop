@@ -19,7 +19,7 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loaded = false;
-    this.httpClient.get(`${this.googleBaseUrl}?isbn:9780545010221&key=${this.googleApiKey}`).subscribe( data => {
+    this.httpClient.get(`${this.googleBaseUrl}?isbn:9780743247542&key=${this.googleApiKey}`).subscribe( data => {
       console.log(data);
       const data_string = JSON.stringify(data);
       this.currentBook = JSON.parse(data_string).items[0].volumeInfo;
