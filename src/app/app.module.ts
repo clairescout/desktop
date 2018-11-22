@@ -8,6 +8,7 @@ import { BookDetailsModule } from './book-details/book-details.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SearchModule } from './search/search.module';
 import { SubmitReviewModule } from './submit-review/submit-review.module';
+import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,11 @@ import { SubmitReviewModule } from './submit-review/submit-review.module';
     BookDetailsModule,
     DashboardModule,
     SearchModule,
-    SubmitReviewModule
+    SubmitReviewModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
