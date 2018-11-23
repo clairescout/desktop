@@ -1,13 +1,26 @@
-<div class="container d-flex bg-white deets justify-content-center">
-  <div class="row" *ngIf="loaded" >
-    <div class="align-self-center text-center col-3">
-        <img class=" p-2 book-img " [src]=currentBook.imageLinks.thumbnail/>
-    </div>
-    
-    <div class="p-2 col-8" >
-      <h3>{{currentBook.title}}</h3>
-      <h5>{{currentBook.authors[0]}}</h5>
-      <p class="small">{{currentBook.description}}</p>
+<div *ngIf="loaded" >
+  <div class="container d-flex bg-white deets justify-content-center">
+    <div class="row"  >
+      <div class="align-self-center text-center col-3">
+          <img class=" p-2 book-img " [src]=currentBook.imageLinks.thumbnail/>
+      </div>
+
+      <div class="p-2 col-8" >
+        <h3>{{currentBook.title}}</h3>
+        <h5>{{currentBook.authors[0]}}</h5>
+        <p class="small">{{currentBook.description}}</p>
+      </div>
     </div>
   </div>
+
+    <mat-card>
+      <mat-card-title>Violence</mat-card-title>
+      <mat-progress-bar
+            aria-label="violence-rating"
+            mode="determinate"
+            [value]="getRating()">
+        </mat-progress-bar>
+    </mat-card>
+
+
 </div>

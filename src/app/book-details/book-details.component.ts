@@ -28,4 +28,9 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
+  getRating() {
+    // TODO: actually do this
+    return 2;
+  }
+
 }
