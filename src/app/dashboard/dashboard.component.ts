@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { fadeInItems } from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ export class DashboardComponent implements OnInit {
       var results = JSON.parse(data_string).results;
       for (var i = 0; i < results.length; i++) {
         if (results[i].isbns[0] != null) {
-          isbns.push(results[i].isbns[0].isbn10)
+          isbns.push(results[i].isbns[0].isbn10);
         }
       }
       // var isbn = JSON.parse(data_string).results[1].isbns[0].isbn10;
@@ -33,12 +34,14 @@ export class DashboardComponent implements OnInit {
       // TWO ISSUES:
       //  for some reason, the array isn't liking the objects that come from the google api
       //  I need to do something asynchronous because myBooks is being set before books is done computing
-      var books = []
-      for (var i = 0; i < isbns.length; i++) {
-        var isbn = isbns[i];
-        this.httpClient.get(`${this.googleBaseUrl}?isbn:${isbn}&key=${this.googleApiKey}`).subscribe( data => {
-          const data_string = JSON.stringify(data);
-          books.push(JSON.parse(data_string).items[0].volumeInfo);
+      let books = [];
+      for (let i = 0; i < isbns.length; i++) {
+        const isbn = isbns[i];
+        this.httpClient.get(`${this.googleBaseUrl}?isbn:${isbn}&key=${this.googleApiKey}`).subscribe( data2 => {
+          const data_string2 = JSON.stringify(data2);
+          if (JSON.parse(data_string2).items) {
+            books.push(JSON.parse(data_string2).items[0].volumeInfo);
+          }
           // books.push(1)
           // console.log(books.length)
         });
@@ -47,7 +50,7 @@ export class DashboardComponent implements OnInit {
       // console.log(books.length)
       this.loaded = true;
 
-    })
+    });
   }
 
 }

@@ -1,6 +1,6 @@
 .book-info {
     // display: flex;
-    width: 45%;
+    //width: 45%;
     align-items: center;
     align-content: center;
 }
@@ -12,4 +12,13 @@
 
 .deets {
     height: 100%;
+}
+
+.content-card {
+    display: inline-block;
+    width: 23%;
+}
+
+.all-content-cards {
+    width: 100%;
 }

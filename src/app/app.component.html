@@ -1,9 +1,13 @@
-<nav class="navbar navbar-dark bg-primary mb-5">
+<nav class="navbar navbar-dark bg-shade mb-5">
   <a class="navbar-brand " href="/">LOGO HERE</a>
+  <span class="example-spacer"></span>
   <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
+    <div class="navbar-nav ml-2 mr-4">
       <a class="nav-item nav-link active text-right" routerLink="submit-review">Submit a Review</a>
     </div>
+    <mat-form-field class="search-bar ml-2 mr-4">
+      <input matInput style="color: #FFFFFF" (keyup)="search($event.target.value)" placeholder="Search">
+    </mat-form-field>
   </div>
 
   
@@ -22,16 +26,16 @@
   </div> -->
 </nav>
 
-<mat-toolbar class="p-4 example-card" color="primary">
+<!-- <mat-toolbar class="p-4 example-card" color="primary">
   <mat-toolbar-row>
     <span>Material App</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon">favorite</mat-icon>
     <mat-icon class="example-icon">delete</mat-icon>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
 
-<mat-card class="example-card">
+<!-- <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
@@ -49,7 +53,7 @@
     <button mat-raised-button color="accent">LIKE</button>
     <button mat-raised-button color="accent">SHARE</button>
   </mat-card-actions>
-</mat-card>
+</mat-card> -->
 
 <router-outlet class="mb-10"></router-outlet>
 
