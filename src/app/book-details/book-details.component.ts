@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { ContentModalComponent } from './content-modal/content-modal.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-book-details',
@@ -15,7 +17,8 @@ export class BookDetailsComponent implements OnInit {
   loaded: boolean;
   reviews: any;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+    private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -31,27 +34,26 @@ export class BookDetailsComponent implements OnInit {
   }
 
   getRating(review) {
-    // TODO: actually do this
     const scores = review.scores;
     const total = scores.reduce((a, b) => a + b);
-    console.log('total');
-    console.log(total);
-    console.log('length');
-    console.log(scores.length);
-
     const average = (total / scores.length);
-    console.log('average');
-    console.log(average);
     return (average / 5) * 100;
   }
 
   createTestReviews() {
     this.reviews = [
-      {title: 'Violence', scores: [4, 4, 4, 4, 5]},
-      {title: 'Sex', scores: [1, 1, 2, 4, 1]},
-      {title: 'Language', scores: [3, 3, 3, 3, 3]},
-      {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2]},
+      {title: 'Violence', scores: [4, 4, 4, 4, 5], reviews: ['lots of violence', 'shooting and guns and punching']},
+      {title: 'Sex', scores: [1, 1, 2, 4, 1], reviews: ['A man and a woman talk about having sex', 'A naked man']},
+      {title: 'Language', scores: [3, 3, 3, 3, 3], reviews: ['a few cuss words', 'typical usual cussing']},
+      {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2], reviews: ['one character has a glass of wine']},
     ];
+  }
+
+  showContentModal(review) {
+    this.dialog.open(ContentModalComponent, {
+      width: '700px',
+      data: review
+    });
   }
 
 }

@@ -15,7 +15,7 @@
     </div>
     
     <div class="all-content-cards">
-      <mat-card class="content-card m-2" *ngFor="let review of reviews">
+      <mat-card class="content-card m-2" *ngFor="let review of reviews" (click)="showContentModal(review)">
         <mat-card-subtitle>{{review.title}}</mat-card-subtitle>
         <mat-progress-bar
             aria-label=`${review.title}-rating`
