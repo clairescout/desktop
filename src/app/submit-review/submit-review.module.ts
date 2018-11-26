@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubmitReviewComponent } from './submit-review.component';
-import { MatCardModule, MatSliderModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatSliderModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class SubmitReviewModule { }

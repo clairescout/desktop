@@ -24,31 +24,34 @@ export class DashboardComponent implements OnInit {
       const data_string = JSON.stringify(data);
       var isbns = [];
       var results = JSON.parse(data_string).results;
-      for (var i = 0; i < results.length; i++) {
+      for (let i = 0; i < results.length; i++) {
         if (results[i].isbns[0] != null) {
           isbns.push(results[i].isbns[0].isbn10);
         }
       }
-
-      
-
-      // var books = []
-      // for (var i = 0; i < isbns.length; i++) {
-      //   var isbn = isbns[i];
-      //   this.httpClient.get(`${this.googleBaseUrl}?isbn:${isbn}&key=${this.googleApiKey}`).subscribe( data => {
-      //     try {
-      //       const data_string = JSON.stringify(data);
-      //       books.push(JSON.parse(data_string).items[0].volumeInfo);
-      //       console.log('books length ' + books.length);
-      //     }
-      //     catch (err) {
-      //       console.log('Error fetching book');
-      //     }
-      //   });
-      // }
-      // this.myBooks = books;
-      // console.log('books length FINAL ' + books.length);
-      // this.loaded = true;
+      console.log(isbns);
+      let books = [];
+      for (let i = 0; i < isbns.length; i++) {
+        const isbn = isbns[i];
+        this.httpClient.get(`${this.googleBaseUrl}?isbn:${isbn}&key=${this.googleApiKey}`).subscribe( data => {
+          // console.log(data);
+          // try {
+          //   const data_string2 = JSON.stringify(data);
+          //   books.push(JSON.parse(data_string).items[0].volumeInfo);
+          //   console.log('books length ' + books.length);
+          // } catch (err) {
+          //   console.log('Error fetching book');
+          // }
+          const data_string2 = JSON.stringify(data);
+          if (JSON.parse(data_string2).items) {
+            books.push(JSON.parse(data_string2).items[0].volumeInfo);
+            console.log('books length ' + books.length);
+          }
+        });
+      }
+      this.myBooks = books;
+      console.log('books length FINAL ' + books.length);
+      this.loaded = true;
 
     });
   }
