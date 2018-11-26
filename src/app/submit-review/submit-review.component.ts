@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-submit-review',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitReviewComponent implements OnInit {
 
-  constructor() { }
+  categories: any;
+
+  constructor() { } // @Inject(MAT_DIALOG_DATA) public data: any
 
   ngOnInit() {
+    this.initReviews();
+  }
+
+  initReviews() {
+    this.categories = [
+      {title: 'Violence', score: 0, review: ''},
+      {title: 'Sex', sscore: 0, review: ''},
+      {title: 'Language', score: 0, review: ''},
+      {title: 'Drugs/Alcohol', score: 0, review: ''},
+    ];
   }
 
 }
