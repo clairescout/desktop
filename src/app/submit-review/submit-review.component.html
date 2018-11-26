@@ -1,17 +1,20 @@
 <!-- <mat-card style="width: 75%"> -->
-
-  <div class="justify-content-center container" style="width: 75%" >
-    <mat-card class="m-3 "  *ngFor="let category of categories">
-      <mat-card-content class="m-3">
-          <mat-card-title class="mb-4">{{category.title}}</mat-card-title>
-          <mat-slider min="0" max="5" step="1" thumbLabel tickInterval="1" style="width: 33%" ([value])="category.score"></mat-slider>
-          <br/>
-          <mat-form-field style="width: 100%">
-            <textarea matInput placeholder='Content in this book' [(ngModel)]="category.review"></textarea>
-          </mat-form-field>
-      </mat-card-content>   
-    </mat-card>
-  </div>
+   
+    <div class="justify-content-center container" style="width: 75%" >
+      <h2 class="m-2 container">Book Title Here</h2>
+      <h6 class="m-2 container">Author Here</h6>
+      <mat-card class="m-3 "  *ngFor="let category of categories">
+        <mat-card-content class="m-3">
+            <mat-card-title class="mb-4">{{category.title}}</mat-card-title>
+            <mat-slider min="0" max="5" step="1" thumbLabel tickInterval="1" style="width: 33%" ([value])="category.score"></mat-slider>
+            <br/>
+            <mat-form-field style="width: 100%">
+              <textarea matInput placeholder='Content in this book' [(ngModel)]="category.review"></textarea>
+            </mat-form-field>
+        </mat-card-content>   
+      </mat-card>
+    </div>
+  
   
 
 <!-- </mat-card> -->
