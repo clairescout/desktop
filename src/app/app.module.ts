@@ -8,7 +8,9 @@ import { BookDetailsModule } from './book-details/book-details.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SearchModule } from './search/search.module';
 import { SubmitReviewModule } from './submit-review/submit-review.module';
-import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule } from 
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
