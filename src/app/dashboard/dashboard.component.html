@@ -1,5 +1,5 @@
 <div *ngIf="loaded" >
   <div class="bestsellers" *ngFor="let book of myBooks">
-    <img class="book-image" [src]=book.imageLinks.thumbnail/>
+    <img class="book-image" *ngIf="book.imageLinks" [src]=book.imageLinks.thumbnail/>
   </div>
 </div>
