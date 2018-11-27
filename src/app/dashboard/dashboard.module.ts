@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import { MatCardModule, MatProgressBarModule, MatDialogModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatProgressBarModule, MatDialogModule, MatButtonModule, MatProgressSpinnerModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { StorageService } from '../services/storage-service.service';
 
@@ -13,7 +13,8 @@ import { StorageService } from '../services/storage-service.service';
     MatCardModule,
     MatProgressBarModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   providers: [StorageService]
 })
