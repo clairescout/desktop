@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 <div class="book-wrapper" *ngIf="loaded" >
   <mat-grid-list cols="4" gutterSize="10px" rowHeight="100px">
-    <img class="book-image" *ngFor="let book of myBooks"
-      [src]=book.imageLinks.thumbnail (click)="showBookInfo(book)" />
+    <div *ngFor="let book of myBooks">
+      <mat-card class="book-card" *ngIf="book.imageLinks" (click)="showBookInfo(book)">
+        <img class="book-image"
+          [src]=book.imageLinks.thumbnail />
+      </mat-card>
+    </div>
   </mat-grid-list>
-=======
-<div *ngIf="loaded" >
-  <div class="bestsellers" *ngFor="let book of myBooks">
-    <img class="book-image" *ngIf="book.imageLinks" [src]=book.imageLinks.thumbnail/>
-  </div>
->>>>>>> b5ab9d0163cd43cef173624435072fcd5944b336
 </div>
