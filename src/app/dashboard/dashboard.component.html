@@ -1,5 +1,5 @@
 <div class="book-wrapper" *ngIf="loaded" >
-  <mat-grid-list cols="4" gutterSize="10px" rowHeight="100px">
+  <mat-grid-list cols="4" gutterSize="10px" rowHeight="300px">
     <mat-grid-tile *ngFor="let book of myBooks">
       <mat-card class="book-card" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
         <img class="book-image"

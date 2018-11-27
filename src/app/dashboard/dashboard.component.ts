@@ -56,7 +56,9 @@ export class DashboardComponent implements OnInit {
         const response = await this.getBook(isbns[i]);
         if (response) {
           if (response.items) {
-            this.myBooks.push(response.items[0].volumeInfo);
+            if (response.items[0].volumeInfo.imageLinks) {
+              this.myBooks.push(response.items[0].volumeInfo);
+            }
           }
           if (i < isbns.length - 1) {
             return this.getBooks(isbns, ++i);
