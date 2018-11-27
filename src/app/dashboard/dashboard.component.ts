@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
       } catch (error) {
         await this.handleError(error);
       }
-      return this.getBook(isbns[0]);
+      return this.getBook(isbns[0]); // TODO: fix this. i just put this in because it had to return a promise.
   }
 
   handleError(error) {
