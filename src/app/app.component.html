@@ -6,7 +6,7 @@
       <a class="nav-item nav-link active text-right" routerLink="submit-review">Submit a Review</a>
     </div>
     <mat-form-field class="search-bar ml-2 mr-4">
-      <input matInput style="color: #FFFFFF" (keyup)="search($event.target.value)" placeholder="Search">
+      <input matInput style="color: #FFFFFF" (keyup.enter)="search($event.target.value)" placeholder="Search">
     </mat-form-field>
   </div>
 
