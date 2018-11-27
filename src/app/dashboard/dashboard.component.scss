@@ -3,5 +3,17 @@
 }
 .book-card {
   display: inline-block;
+  width: 75%;
+  height: 350px;
 }
+
+.book-card:hover {
+  cursor: pointer;
+}
+
+.book-image {
+  height: 80%;
+}
+
+
 

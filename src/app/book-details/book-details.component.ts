@@ -13,7 +13,8 @@ import { StorageService } from '../services/storage-service.service';
 })
 export class BookDetailsComponent implements OnInit {
   // private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
-  private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
+  // private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
+  private googleApiKey = 'AIzaSyCaj2CVGkrMwM9__MjQLBaEbCoGKFWVlAw';
   private googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
   currentBook: any;
   currentIsbn: string;
