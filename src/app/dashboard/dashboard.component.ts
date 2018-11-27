@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
   }
 
   goToBookDetails(book) {
-    this.storageService.setIsbn(book.isbn); // TODO: is book.isbn right?
+    this.storageService.setIsbn(book.industryIdentifiers[0].identifier); // TODO: is book.isbn right?
     this.router.navigateByUrl('/book-details');
   }
 
