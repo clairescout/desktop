@@ -23,11 +23,11 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loaded = false;
-    this.createTestReviews();
     this.httpClient.get(`${this.googleBaseUrl}?isbn:9780743247542&key=${this.googleApiKey}`).subscribe( data => {
       console.log(data);
       const data_string = JSON.stringify(data);
       this.currentBook = JSON.parse(data_string).items[0].volumeInfo;
+      this.getTestReviews();
       console.log(this.currentBook);
       this.loaded = true;
     });
@@ -40,13 +40,23 @@ export class BookDetailsComponent implements OnInit {
     return (average / 5) * 100;
   }
 
-  createTestReviews() {
+  getTestReviews() {
     this.reviews = [
       {title: 'Violence', scores: [4, 4, 4, 4, 5], reviews: ['lots of violence', 'shooting and guns and punching']},
       {title: 'Sex', scores: [1, 1, 2, 4, 1], reviews: ['A man and a woman talk about having sex', 'A naked man']},
       {title: 'Language', scores: [3, 3, 3, 3, 3], reviews: ['a few cuss words', 'typical usual cussing']},
       {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2], reviews: ['one character has a glass of wine']},
     ];
+    const review = localStorage.getItem(this.currentBook.title);
+    if (review) {
+      const reviewObject = JSON.parse(review);
+      for (let i = 0; i < 4; i++) {
+        this.reviews[i].scores.push(reviewObject[i].score);
+        if (reviewObject[i].review !== '') {
+          this.reviews[i].reviews.push(reviewObject[i].review);
+        }
+      }
+    }
   }
 
   showContentModal(review) {
