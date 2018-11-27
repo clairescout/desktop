@@ -12,7 +12,7 @@ export class StorageService {
         return this.isbn;
     }
 
-    public setScope(scope: any): void {
+    public setIsbn(scope: any): void {
         this.isbn = scope;
     }
 }

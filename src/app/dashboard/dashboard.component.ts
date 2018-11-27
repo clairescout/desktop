@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { fadeInItems } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { StorageService } from '../services/storage-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +20,9 @@ export class DashboardComponent implements OnInit {
   myBooks: any;
   loaded: boolean;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+              private storageService: StorageService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -70,6 +74,11 @@ export class DashboardComponent implements OnInit {
 
   showBookInfo(book) {
     console.log('showBookInfo');
+  }
+
+  goToBookDetails(book) {
+    this.storageService.setIsbn(book.isbn); // TODO: is book.isbn right?
+    this.router.navigateByUrl('/book-details');
   }
 
 }
