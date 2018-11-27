@@ -11,7 +11,8 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
-  private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
+  // private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
+  private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
   private googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
   currentBook: any;
   loaded: boolean;

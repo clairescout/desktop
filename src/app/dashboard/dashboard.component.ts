@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { fadeInItems } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,8 @@ import { fadeInItems } from '@angular/material';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
+  // private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
+  private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
   private googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
   private newYorkTimesApiKey = 'a846ecda81804214814cde1da594fdc6';
   private newYorkTimesBaseUrl = 'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json';
@@ -45,6 +48,10 @@ export class DashboardComponent implements OnInit {
       }
 
     });
+  }
+
+  showBookInfo(book) {
+    console.log('showBookInfo');
   }
 
 }

@@ -9,6 +9,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SearchModule } from './search/search.module';
 import { SubmitReviewModule } from './submit-review/submit-review.module';
 import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
@@ -30,6 +31,7 @@ import 'hammerjs';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
     BrowserAnimationsModule
   ],
   providers: [],
