@@ -1,1 +1,5 @@
-<!-- <img *ngIf="loaded" [src]="myBook.imageLinks.thumbnail"/> -->
+<div *ngIf="loaded" >
+  <div class="bestsellers" *ngFor="let book of myBooks">
+    <img class="book-image" [src]=book.imageLinks.thumbnail/>
+  </div>
+</div>
