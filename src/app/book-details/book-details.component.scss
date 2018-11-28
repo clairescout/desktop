@@ -7,7 +7,13 @@
 
 .book-img {
     display: inline-block;
-    width: 85%;
+    width: 80%;
+}
+
+.the-details-card {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .deets {
@@ -16,7 +22,7 @@
 
 .content-card {
     display: inline-block;
-    width: 23%;
+    width: 90%;
 }
 
 .content-card:hover {
@@ -25,4 +31,8 @@
 
 .all-content-cards {
     width: 100%;
+}
+
+/deep/ .panel-head-and-bar {
+    width: 90% !important;
 }

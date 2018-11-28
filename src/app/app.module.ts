@@ -13,10 +13,12 @@ import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule, MatFor
 import { MatGridListModule } from '@angular/material/grid-list'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

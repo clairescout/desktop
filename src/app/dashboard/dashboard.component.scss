@@ -1,14 +1,58 @@
 .book-wrapper {
   text-align: center;
-}
-.book-card {
-  display: inline-block;
   width: 75%;
+  margin-left: auto;
+  margin-right:auto;
+}
+.view-first .book-card {
+  display: inline-block;
+  width: 95%;
   height: 350px;
 }
 
-.book-card:hover {
+.view-first:hover .book-card{
+  display:none;
   cursor: pointer;
+}
+
+.view-first .book-card-mask {
+  display:none;
+  
+}
+
+.view-first:hover  .book-card-mask {
+  display: inline-block;
+  width: 95%;
+  height: 350px;
+  cursor: pointer;
+  overflow-y: scroll;
+  animation: fadein .7s;
+}
+
+.book-title {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: .5px;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  font-weight: 100;
+  // background-color: #293846;
+  margin: 20px 0 0 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.book-author {
+  font-size: 12px;
+  letter-spacing: .2px;
+  position: relative;
+  color: #676a6c;
+  padding: 5px 20px 5px;
+  text-align: center;
+  margin: 10px 0 10px 0;
+  max-height: 30px;
+  overflow: auto;
 }
 
 .book-image {
@@ -19,5 +63,33 @@
   text-align: left !important;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 

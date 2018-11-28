@@ -1,34 +1,53 @@
 <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
 <div *ngIf="loaded" >
-  <mat-card style="margin: 4em">
+  <mat-card class="the-details-card">
     <div class="container d-flex bg-white deets justify-content-center">
-      <div class="row"  >
-        <div class="align-self-center text-center col-3">
+      <div class="row mt-3" style="width: 100% !important"  >
+        <div class="text-center col-5">
             <img class=" p-2 book-img " [src]=currentBook.imageLinks.thumbnail/>
         </div>
   
-        <div class="p-2 col-8" >
+        <div class="p-2 col-7" >
           <h3>{{currentBook.title}}</h3>
-          <h5>{{currentBook.authors[0]}}</h5>
-          <p class="small">{{currentBook.description}}</p>
+          <h5 class="mt-2">{{currentBook.authors[0]}}</h5>
+          <p class="small mb-4">{{currentBook.description}}</p>
+          <mat-accordion>
+              <div *ngFor="let review of reviews" >
+                <mat-expansion-panel style="margin-bottom: 15px !important; padding: 10px !important;">
+                  <mat-expansion-panel-header>
+                    <!-- <mat-card class="content-card m-2">
+                      <mat-card-subtitle>{{review.title}}</mat-card-subtitle> -->
+                      <div class="panel-head-and-bar">
+                          <h6 style="letter-spacing: .5px;">{{review.title}}</h6>
+                          <mat-progress-bar
+                          aria-label=`${review.title}-rating`
+                          mode="determinate"
+                          [value]="getRating(review)">
+                          </mat-progress-bar>
+                      </div>
+                      
+                    <!-- </mat-card> -->
+                    <br/>
+                  </mat-expansion-panel-header>
+                  <hr class="ml-2 mr-2 mt-4 mb-3">
+                  <div class="m-2" *ngFor="let contentreview of review.reviews">
+                    <p class="m-1">{{contentreview}}</p>
+                    <hr>
+                  </div>
+                </mat-expansion-panel>
+              </div>
+          </mat-accordion>
         </div>
       </div>
     </div>
     
     <div class="all-content-cards">
-      <mat-card class="content-card m-2" *ngFor="let review of reviews" (click)="showContentModal(review)">
-        <mat-card-subtitle>{{review.title}}</mat-card-subtitle>
-        <mat-progress-bar
-            aria-label=`${review.title}-rating`
-            mode="determinate"
-            [value]="getRating(review)">
-        </mat-progress-bar>
-      </mat-card>
+      
     </div>
     
 
   </mat-card>
   
-
+  <!-- (click)="showContentModal(review)" -->
 
 </div>

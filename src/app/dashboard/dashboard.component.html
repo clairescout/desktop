@@ -1,12 +1,23 @@
 <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
 <div class="book-wrapper" *ngIf="loaded" >
-  <mat-grid-list cols="4" gutterSize="10px" rowHeight="400px">
-    <mat-grid-tile *ngFor="let book of myBooks">
+  <mat-grid-list class="ml-3 mr-3" cols="3" gutterSize="10px" rowHeight="400px">
+    <mat-grid-tile class="view-first" *ngFor="let book of myBooks">
       <mat-card class="book-card" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
         <img class="book-image"
           [src]=book.imageLinks.thumbnail />
         <h6 class="mt-3 book-text">{{book.title}}</h6>
         <mat-card-subtitle class="book-text">{{book.authors[0]}}</mat-card-subtitle>
+      </mat-card>
+      <mat-card class="book-card-mask p-0" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
+        <div style="width: 100%">
+            <div class=" m-0 bg-primary text-white">
+                <h6 class="book-title">{{book.title}}</h6>
+                <mat-card-subtitle class="book-author text-white">{{book.authors[0]}}</mat-card-subtitle>
+            </div>
+            <div class="mb-2">
+                <mat-card-content class="book-text p-2 mb-3">{{book.description}}</mat-card-content>
+            </div>        
+        </div>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
