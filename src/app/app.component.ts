@@ -19,6 +19,11 @@ export class AppComponent {
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     // go to search page
     this.storageService.setSearchField(filterValue);
-    this.router.navigateByUrl('/search');
+    if (this.router == '/search') {
+      // call ngOnInit()
+    }
+    else {
+      this.router.navigateByUrl('/search');
+    }
   }
 }

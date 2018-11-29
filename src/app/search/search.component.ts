@@ -25,13 +25,19 @@ export class SearchComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.searchResults = [];
-    this.searchField = this.storageService.getSearchField();
-    this.httpClient.get(`${this.googleBaseUrl}${this.searchField}&key=${this.googleApiKey}`).subscribe( data => {
-      const data_string = JSON.stringify(data);
-      this.searchResults = JSON.parse(data_string).items;
-      this.loaded = true;
-    });
+    if (this.storageService.getSearchField() !== '') {
+      this.searchResults = [];
+      this.searchField = this.storageService.getSearchField();
+      this.httpClient.get(`${this.googleBaseUrl}${this.searchField}&key=${this.googleApiKey}`).subscribe( data => {
+        const data_string = JSON.stringify(data);
+        this.searchResults = JSON.parse(data_string).items;
+        this.loaded = true;
+      });
+    }
+  }
+
+  public performSearch() {
+    this.ngOnInit();
   }
 
   goToBookDetails(book) {

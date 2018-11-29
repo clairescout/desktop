@@ -1,16 +1,18 @@
-<mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
-<div class="results-wrapper" *ngIf="loaded" >
-  <mat-grid-list cols="1" gutterSize="10px" rowHeight="450px">
-    <mat-grid-tile *ngFor="let book of searchResults">
-      <mat-card class="result-card" *ngIf="book.volumeInfo.imageLinks" (click)="goToBookDetails(book.volumeInfo)">
-        <img class="result-image"
-          [src]=book.volumeInfo.imageLinks.thumbnail />
-        <div class="book-info">
-          <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.title}}</mat-card-subtitle>
-          <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.authors[0]}}</mat-card-subtitle>
-          <mat-card-subtitle class="book-info-secondary">{{book.volumeInfo.description}}</mat-card-subtitle>
-        </div>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div id="searching">
+  <mat-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
+  <div class="results-wrapper" *ngIf="loaded" >
+    <mat-grid-list cols="1" gutterSize="10px" rowHeight="450px">
+      <mat-grid-tile *ngFor="let book of searchResults">
+        <mat-card class="result-card" *ngIf="book.volumeInfo.imageLinks" (click)="goToBookDetails(book.volumeInfo)">
+          <img class="result-image"
+            [src]=book.volumeInfo.imageLinks.thumbnail />
+          <div class="book-info">
+            <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.title}}</mat-card-subtitle>
+            <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.authors[0]}}</mat-card-subtitle>
+            <mat-card-subtitle class="book-info-secondary">{{book.volumeInfo.description}}</mat-card-subtitle>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
