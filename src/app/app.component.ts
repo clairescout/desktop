@@ -21,6 +21,11 @@ export class AppComponent {
     }
   }
 
+  goToSearch() {
+    this.storageService.setFromSubmitReview(true);
+    this.router.navigateByUrl('/search');
+  }
+
   search(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches

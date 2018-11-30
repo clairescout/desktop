@@ -2,6 +2,7 @@
     margin: 0 auto; /* Added */
     float: none; /* Added */
     margin-bottom: 10px; /* Added */
+    margin-top: 8px;
 }
 
 /deep/.mat-slider-thumb-label {
@@ -9,11 +10,11 @@
     border-radius: 50% 50% 0 !important;
     opacity: 1 !important;
   }
-  
+
   .mat-slider-thumb {
     transform: scale(0) !important;
   }
-  
+
   /deep/ .mat-slider-thumb-label-text {
     opacity: 1 !important;
   }

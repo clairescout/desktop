@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   searchField: any;
   searchResults = [];
   loaded: boolean;
+  fromSubmitReview: boolean;
 
   constructor(private httpClient: HttpClient,
               private storageService: StorageService,
@@ -27,28 +28,41 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchField = this.storageService.getSearchField();
-    this.search();
+    if (this.searchField !== '') {
+      this.search();
+    }
+    else {
+      this.loaded = true;
+    }
+    this.fromSubmitReview = this.storageService.getFromSubmitReview();
   }
 
   search() {
-    if (this.storageService.getSearchField() !== '') {
-      this.searchResults = [];
-      this.httpClient.get(`${this.googleBaseUrl}${this.searchField}&key=${this.googleApiKey}`).subscribe( data => {
-        const data_string = JSON.stringify(data);
-        this.searchResults = JSON.parse(data_string).items;
-        this.loaded = true;
-      });
-    }
+    this.searchResults = [];
+    this.httpClient.get(`${this.googleBaseUrl}${this.searchField}&key=${this.googleApiKey}`).subscribe( data => {
+      const data_string = JSON.stringify(data);
+      this.searchResults = JSON.parse(data_string).items;
+      this.loaded = true;
+    });
   }
 
   searchFromComponent(filterValue: string) {
+    this.loaded = false;
     this.searchField = filterValue;
     this.search();
   }
 
-  goToBookDetails(book) {
-    this.storageService.setIsbn(book.industryIdentifiers[0].identifier); // TODO: is book.isbn right?
-    this.router.navigateByUrl('/book-details');
+  goToNextComponent(book) {
+    console.log(book);
+    this.storageService.setIsbn(book.industryIdentifiers[0].identifier);
+    if (this.fromSubmitReview) {
+      this.storageService.setTitle(book.title);
+      this.storageService.setAuthor(book.authors[0]);
+      this.router.navigateByUrl('/submit-review');
+    }
+    else {
+      this.router.navigateByUrl('/book-details');
+    }
   }
 
 }

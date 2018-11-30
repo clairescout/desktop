@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Router } from '@angular/router';
+import { StorageService } from '../services/storage-service.service';
 
 @Component({
   selector: 'app-submit-review',
@@ -10,11 +11,17 @@ import { Router } from '@angular/router';
 export class SubmitReviewComponent implements OnInit {
 
   categories: any;
-  book: any;
+  isbn: any;
+  title: any;
+  author: any;
 
-  constructor(private router: Router) { } // @Inject(MAT_DIALOG_DATA) public data: any
+  constructor(private router: Router,
+              private storageService: StorageService) { } // @Inject(MAT_DIALOG_DATA) public data: any
 
   ngOnInit() {
+    this.isbn = this.storageService.getIsbn();
+    this.title = this.storageService.getTitle();
+    this.author = this.storageService.getAuthor();
     this.initReviews();
   }
 

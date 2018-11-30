@@ -5,6 +5,9 @@ export class StorageService {
 
     public isbn = '9780743247542';
     public searchField = '';
+    public fromSubmitReview = false;
+    public title = '';
+    public author = '';
 
     constructor() {
     }
@@ -23,5 +26,29 @@ export class StorageService {
 
     public setSearchField(scope: any): void {
         this.searchField = scope;
+    }
+
+    public getFromSubmitReview(): boolean {
+      return this.fromSubmitReview;
+    }
+
+    public setFromSubmitReview(scope: any): void {
+      this.fromSubmitReview = scope;
+    }
+
+    public getTitle(): string {
+      return this.title;
+    }
+
+    public setTitle(scope: any): void {
+      this.title = scope;
+    }
+
+    public getAuthor(): string {
+      return this.author;
+    }
+
+    public setAuthor(scope: any): void {
+      this.author = scope;
     }
 }

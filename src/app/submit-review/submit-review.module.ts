@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SubmitReviewComponent } from './submit-review.component';
 import { MatCardModule, MatSliderModule, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { StorageService } from '../services/storage-service.service';
 
 @NgModule({
   declarations: [SubmitReviewComponent],
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatButtonModule
-  ]
+  ],
+  providers: [StorageService]
 })
 export class SubmitReviewModule { }
