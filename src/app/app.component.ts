@@ -8,10 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  notInSearch = false;
   title = 'desktop';
 
   constructor(private storageService: StorageService,
               private router: Router) {
+  }
+
+  ngOnInit() {
+    if (this.router.url !== '/search') {
+      this.notInSearch = true;
+    }
   }
 
   search(filterValue: string) {
@@ -19,10 +26,7 @@ export class AppComponent {
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     // go to search page
     this.storageService.setSearchField(filterValue);
-    if (this.router == '/search') {
-      // call ngOnInit()
-    }
-    else {
+    if (this.router.url !== '/search') {
       this.router.navigateByUrl('/search');
     }
   }
