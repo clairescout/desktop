@@ -1,0 +1,38 @@
+.navbar-nav {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navvv {
+    text-align: center;
+}
+
+ul {
+    text-align: justify;
+}
+ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+ul:before {
+    content: '';
+    display: block;
+    margin-top: -1.25em;
+}
+li {
+    color: #fff;
+    display: inline-block;
+    font: 1em/1.5 sans-serif;
+    margin-right: -.25em;
+    padding: .1em 1.5em;
+    position: relative;
+    top: 1.25em;
+}
+
+.menu {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}

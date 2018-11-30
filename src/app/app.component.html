@@ -1,5 +1,8 @@
 <nav class="navbar navbar-dark bg-shade">
-  <a class="navbar-brand " href="/">LOGO HERE</a>
+  <a class="navbar-brand " href="/">
+      <h1 >LOGO HERE</h1>
+      <h6>- Parental Advisory for Books -</h6>
+  </a>
   <span class="example-spacer"></span>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav ml-2 mr-4">
@@ -9,26 +12,34 @@
     <!-- <div class="navbar-nav ml-2 mr-4">
       <a class="nav-item nav-link active text-right" routerLink="about-us">About Us</a>
     </div> -->
-    <mat-form-field class="search-bar ml-2 mr-4" *ngIf="notInSearch">
+    <mat-form-field appearance="outline" class="search-bar ml-2 mr-4" *ngIf="!inSearch">
       <input matInput style="color: #FFFFFF" (keyup.enter)="search($event.target.value)" placeholder="Search">
     </mat-form-field>
   </div>
-
-
-  <!-- <div class="navbar-expand ml-auto navbar-nav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
-        <i class="fa fa-medium"></i>
-      </a>
-    </div>
-  </div> -->
 </nav>
+
+<div *ngIf="!isGenrePage" class="bg-primary" style="width: 100%">
+    <ul class="menutext-white navvv">
+        <li class="navbar-nav" (click)="searchBooks('best young adult books')" routerLink="/genres">
+          <a class="nav-item nav-link active">Young Adult</a>
+        </li>
+        <li class="navbar-nav" routerLink="/genres">
+          <a class="nav-item nav-link active">SciFi</a>
+        </li>
+        <li class="navbar-nav" routerLink="/genres">
+          <a class="nav-item nav-link active">Romance Novels</a>
+        </li>
+        <li class="navbar-nav" routerLink="/genres">
+          <a class="nav-item nav-link active">Non-fiction</a>
+        </li>
+        <li class="navbar-nav" routerLink="/genres">
+          <a class="nav-item nav-link active">Self Help</a>
+        </li>
+        <li class="navbar-nav" routerLink="/genres">
+          <a class="nav-item nav-link active">History</a>
+        </li>
+      </ul>
+</div>
 
 <!-- <mat-toolbar class="p-4 example-card" color="primary">
   <mat-toolbar-row>

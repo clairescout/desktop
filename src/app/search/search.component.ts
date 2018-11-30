@@ -30,8 +30,7 @@ export class SearchComponent implements OnInit {
     this.searchField = this.storageService.getSearchField();
     if (this.searchField !== '') {
       this.search();
-    }
-    else {
+    } else {
       this.loaded = true;
     }
     this.fromSubmitReview = this.storageService.getFromSubmitReview();
@@ -39,6 +38,7 @@ export class SearchComponent implements OnInit {
 
   search() {
     this.searchResults = [];
+
     this.httpClient.get(`${this.googleBaseUrl}${this.searchField}&key=${this.googleApiKey}`).subscribe( data => {
       const data_string = JSON.stringify(data);
       this.searchResults = JSON.parse(data_string).items;
@@ -59,8 +59,7 @@ export class SearchComponent implements OnInit {
       this.storageService.setTitle(book.title);
       this.storageService.setAuthor(book.authors[0]);
       this.router.navigateByUrl('/submit-review');
-    }
-    else {
+    } else {
       this.router.navigateByUrl('/book-details');
     }
   }

@@ -8,16 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  notInSearch = false;
+  inSearch = false;
   title = 'desktop';
+  isGenrePage = true;
 
   constructor(private storageService: StorageService,
               private router: Router) {
   }
-
+  
   ngOnInit() {
+    this.checkIsGenreAndSearchPage();
     if (this.router.url !== '/search') {
-      this.notInSearch = true;
+      this.inSearch = false;
+    }
+  }
+
+  checkIsGenreAndSearchPage() {
+    if (this.router.url !== '/genres') {
+      console.log('is not genre page!');
+      this.isGenrePage = false;
+    }
+    if (this.router.url === '/search') {
+      console.log('in is search');
+      this.inSearch = true;
     }
   }
 
@@ -34,5 +47,9 @@ export class AppComponent {
     if (this.router.url !== '/search') {
       this.router.navigateByUrl('/search');
     }
+  }
+
+  searchBooks(string) {
+    // call method on genres page?
   }
 }

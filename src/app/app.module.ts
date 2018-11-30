@@ -10,15 +10,17 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SearchModule } from './search/search.module';
 import { SubmitReviewModule } from './submit-review/submit-review.module';
 import { MatCardModule, MatToolbarModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { MatGridListModule } from '@angular/material/grid-list'
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { GenresComponent } from './genres/genres.component';
+import { GenresModule } from './genres/genres.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutUsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GenresModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]

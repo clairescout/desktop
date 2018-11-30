@@ -1,0 +1,24 @@
+<!-- <div *ngIf="!isGenrePage" class="bg-primary" style="width: 100%">
+    <ul class="menutext-white navvv">
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('best young adult books')">Young Adult</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('best sciFi books')">SciFi</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('best romance novels')">Romance Novels</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('best nonfiction books')">Non-fiction</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('best self help books')">Self Help</a>
+        </li>
+        <li class="navbar-nav">
+          <a class="nav-item nav-link active" (click)="getBooks('world history books')">History</a>
+        </li>
+      </ul>
+</div> -->
+<mat-spinner style="margin:10px auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
+<app-tile-view *ngIf="loaded" [myBooks]="myBooks" [reviews]="reviews"></app-tile-view>>

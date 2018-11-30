@@ -5,6 +5,7 @@ import { SearchComponent } from './search/search.component';
 import { SubmitReviewComponent } from './submit-review/submit-review.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { GenresComponent } from './genres/genres.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
   }, {
     path: 'about-us',
     component: AboutUsComponent
+  }, {
+    path: 'genres',
+    component: GenresComponent
   }
 ];
 

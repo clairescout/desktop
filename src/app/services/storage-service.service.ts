@@ -8,6 +8,7 @@ export class StorageService {
     public fromSubmitReview = false;
     public title = '';
     public author = '';
+    public genre = 'best young adult';
 
     constructor() {
     }
@@ -50,5 +51,13 @@ export class StorageService {
 
     public setAuthor(scope: any): void {
       this.author = scope;
+    }
+
+    public getGenre(): string {
+      return this.genre;
+    }
+
+    public setGenre(scope: any): void {
+      this.genre = scope;
     }
 }

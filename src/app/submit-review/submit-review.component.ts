@@ -35,7 +35,7 @@ export class SubmitReviewComponent implements OnInit {
   }
 
   submit() {
-    localStorage.setItem('The Glass Castle', JSON.stringify(this.categories)); // TODO: fix this
+    localStorage.setItem(this.title, JSON.stringify(this.categories));
     this.router.navigateByUrl('/book-details');
   }
 

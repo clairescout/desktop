@@ -30,4 +30,52 @@
 
 .navbar-nav {
     display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.navvv {
+    text-align: center;
+}
+
+ul {
+    text-align: justify;
+}
+ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+ul:before {
+    content: '';
+    display: block;
+    margin-top: -1.25em;
+}
+li {
+    color: #fff;
+    display: inline-block;
+    font: 1em/1.5 sans-serif;
+    margin-right: -.25em;
+    padding: 0 1.5em;
+    position: relative;
+    top: 1.25em;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.menu {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/deep/ md-input-container label {
+    color: white !important;
+  }
+  
+  /* When the input is focused */
+/deep/ md-input-container.md-input-focused label {
+    color: white;
+  }
