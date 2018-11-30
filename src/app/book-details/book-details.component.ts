@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ContentModalComponent } from './content-modal/content-modal.component';
 import { MatDialog } from '@angular/material';
 import { StorageService } from '../services/storage-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-details',
@@ -24,7 +25,8 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(private httpClient: HttpClient,
     private dialog: MatDialog,
-    private storageService: StorageService) {
+    private storageService: StorageService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -71,6 +73,13 @@ export class BookDetailsComponent implements OnInit {
       width: '700px',
       data: review
     });
+  }
+
+  submitReview() {
+    this.storageService.setIsbn(this.currentIsbn);
+    this.storageService.setTitle(this.currentBook.title);
+    this.storageService.setAuthor(this.currentBook.authors[0]);
+    this.router.navigateByUrl('/submit-review');
   }
 
 }

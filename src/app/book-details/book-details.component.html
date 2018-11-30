@@ -5,8 +5,9 @@
       <div class="row mt-3" style="width: 100% !important"  >
         <div class="text-center col-5">
             <img class=" p-2 book-img " [src]=currentBook.imageLinks.thumbnail/>
+            <button mat-raised-button (click)="submitReview()" class="ml-3 mr-3 pl-4 pr-4 text-white bg-primary">Submit Content Advisory</button>
         </div>
-  
+
         <div class="p-2 col-7" >
           <h3>{{currentBook.title}}</h3>
           <h5 class="mt-2">{{currentBook.authors[0]}}</h5>
@@ -25,7 +26,7 @@
                           [value]="getRating(review)">
                           </mat-progress-bar>
                       </div>
-                      
+
                     <!-- </mat-card> -->
                     <br/>
                   </mat-expansion-panel-header>
@@ -40,14 +41,14 @@
         </div>
       </div>
     </div>
-    
+
     <div class="all-content-cards">
-      
+
     </div>
-    
+
 
   </mat-card>
-  
+
   <!-- (click)="showContentModal(review)" -->
 
 </div>
