@@ -35,10 +35,11 @@ export class GenresComponent implements OnInit {
     this.initReviews();
     this.loaded = false;
     this.myBooks = [];
-    this.getBooks(this.searchValue);
+    this.getBooks(this.storageService.getGenre());
   }
 
   getBooks(search) {
+    console.log('search value');
     console.log(search);
     this.httpClient.get(`${this.googleBaseUrl}${search}&key=${this.googleApiKey}`).subscribe( data => {
       const data_string = JSON.stringify(data);
