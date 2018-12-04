@@ -21,12 +21,14 @@ export class SearchComponent implements OnInit {
   searchResults = [];
   loaded: boolean;
   fromSubmitReview: boolean;
+  reviews: any;
 
   constructor(private httpClient: HttpClient,
               private storageService: StorageService,
               private router: Router) { }
 
   ngOnInit() {
+    this.initReviews();
     this.searchField = this.storageService.getSearchField();
     if (this.searchField !== '') {
       this.search();
@@ -62,6 +64,25 @@ export class SearchComponent implements OnInit {
     } else {
       this.router.navigateByUrl('/book-details');
     }
+  }
+
+  getRating(review) {
+    // const scores = review.scores;
+    // const total = scores.reduce((a, b) => a + b);
+    // const average = (total / scores.length);
+    // return (average / 5) * 100;
+    const value = Math.floor(Math.random() * (5 + 1));
+    console.log(value);
+    return 75;
+  }
+
+  initReviews() {
+    this.reviews = [
+      {title: 'Violence', scores: [4, 4, 4, 4, 5], reviews: ['lots of violence', 'shooting and guns and punching']},
+      {title: 'Sex', scores: [1, 1, 2, 4, 1], reviews: ['A man and a woman talk about having sex', 'A naked man']},
+      {title: 'Language', scores: [3, 3, 3, 3, 3], reviews: ['a few cuss words', 'typical usual cussing']},
+      {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2], reviews: ['one character has a glass of wine']},
+    ];
   }
 
 }
