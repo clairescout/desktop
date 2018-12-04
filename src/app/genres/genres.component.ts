@@ -39,6 +39,7 @@ export class GenresComponent implements OnInit {
   }
 
   getBooks(search) {
+    console.log(search);
     this.httpClient.get(`${this.googleBaseUrl}${search}&key=${this.googleApiKey}`).subscribe( data => {
       const data_string = JSON.stringify(data);
       this.myBooks = JSON.parse(data_string).items;
