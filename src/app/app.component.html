@@ -1,13 +1,13 @@
 <nav class="navbar navbar-dark bg-shade">
-  <a class="navbar-brand " href="/">
-      <h1 >LOGO HERE</h1>
-      <h6>- Parental Advisory for Books -</h6>
+  <a (click)="setGenre('')" class="navbar-brand " href="/">
+      <h1 >LOOKBOOK</h1>
+      <h6>- The Table of Content -</h6>
   </a>
   <span class="example-spacer"></span>
   <div class="navbar-expand mr-auto">
-    <div class="navbar-nav ml-2 mr-4">
+    <div (click)="setGenre('')" class="navbar-nav ml-2 mr-4">
       <!-- <a class="nav-item nav-link active text-right" routerLink="submit-review">Submit a Book Content Advisory</a> -->
-      <a class="nav-item nav-link active text-right" (click)="goToSearch()">Submit a Book Content Advisory</a>
+      <a class="nav-item nav-link active text-right" (click)="goToSearch()">Submit a Content Review</a>
     </div>
     <!-- <div class="navbar-nav ml-2 mr-4">
       <a class="nav-item nav-link active text-right" routerLink="about-us">About Us</a>
@@ -19,23 +19,23 @@
 </nav>
 
 <div *ngIf="!isGenrePage" class="bg-primary" style="width: 100%">
-    <ul class="menutext-white navvv">
-        <li class="navbar-nav" (click)="searchBooks('best young adult books')" routerLink="/genres">
+    <ul class="text-white navvv pb-0">
+        <li class="navbar-nav pb-0" [class.on-page]="isPage('ya')" (click)="searchBooks('best young adult books', 'ya')" routerLink="/genres">
           <a class="nav-item nav-link active">Young Adult</a>
         </li>
-        <li class="navbar-nav" routerLink="/genres">
+        <li class="navbar-nav" [class.on-page]="isPage('sf')" (click)="searchBooks('best scifi books', 'sf')" routerLink="/genres">
           <a class="nav-item nav-link active">SciFi</a>
         </li>
-        <li class="navbar-nav" routerLink="/genres">
+        <li class="navbar-nav" [class.on-page]="isPage('ro')" (click)="searchBooks('best romance novels books', 'ro')" routerLink="/genres">
           <a class="nav-item nav-link active">Romance Novels</a>
         </li>
-        <li class="navbar-nav" routerLink="/genres">
+        <li class="navbar-nav" [class.on-page]="isPage('nf')" (click)="searchBooks('best non fiction books', 'nf')" routerLink="/genres">
           <a class="nav-item nav-link active">Non-fiction</a>
         </li>
-        <li class="navbar-nav" routerLink="/genres">
+        <li class="navbar-nav" [class.on-page]="isPage('sh')" (click)="searchBooks('best self help books', 'sh')" routerLink="/genres">
           <a class="nav-item nav-link active">Self Help</a>
         </li>
-        <li class="navbar-nav" routerLink="/genres">
+        <li class="navbar-nav" [class.on-page]="isPage('h')" (click)="searchBooks('best world history books', 'h')" routerLink="/genres">
           <a class="nav-item nav-link active">History</a>
         </li>
       </ul>

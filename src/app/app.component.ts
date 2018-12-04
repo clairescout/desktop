@@ -11,6 +11,7 @@ export class AppComponent {
   inSearch = false;
   title = 'desktop';
   isGenrePage = true;
+  theGenre = '';
 
   constructor(private storageService: StorageService,
               private router: Router) {
@@ -40,6 +41,7 @@ export class AppComponent {
   }
 
   search(filterValue: string) {
+    this.setGenre('');
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     // go to search page
@@ -49,7 +51,20 @@ export class AppComponent {
     }
   }
 
-  searchBooks(string) {
-    // call method on genres page?
+  searchBooks(string, genre) {
+    this.storageService.setGenre(string);
+    this.theGenre = genre;
+    // window.location.reload();
+  }
+
+  isPage(current) {
+    if (this.theGenre === current) {
+      return true;
+    }
+    return false;
+  }
+
+  setGenre(current) {
+    this.theGenre = current;
   }
 }

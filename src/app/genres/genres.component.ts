@@ -12,23 +12,30 @@ export class GenresComponent implements OnInit {
 
   // private googleApiKey = 'AIzaSyBXzONnrOqcH0xQg_6ZfZnJSW69Ipbexu8';
   // private googleApiKey = 'AIzaSyApxADsUGvvmAhQw4WhZjPrEduztHjhtms';
-  private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
-  // private googleApiKey = 'AIzaSyCaj2CVGkrMwM9__MjQLBaEbCoGKFWVlAw';
+  // private googleApiKey = 'AIzaSyBHGmlJTnblR5Jy58Wbhiy3p576i8BMLRw';
+  private googleApiKey = 'AIzaSyCaj2CVGkrMwM9__MjQLBaEbCoGKFWVlAw';
   private googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
   myBooks: any;
   loaded: boolean;
   reviews: any;
+  searchValue;
 
   constructor(private httpClient: HttpClient,
               private storageService: StorageService,
-              private router: Router) {
+              private router: Router
+              ) {
+      this.searchValue = storageService.getGenre();
+      this.searchValue = storageService.nameChange.subscribe((value) => {
+        this.searchValue = value;
+        this.getBooks(this.storageService.getGenre());
+      });
   }
 
   ngOnInit() {
     this.initReviews();
     this.loaded = false;
     this.myBooks = [];
-    this.getBooks(this.storageService.getGenre());
+    this.getBooks(this.searchValue);
   }
 
   getBooks(search) {

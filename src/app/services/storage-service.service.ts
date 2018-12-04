@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class StorageService {
@@ -8,7 +9,8 @@ export class StorageService {
     public fromSubmitReview = false;
     public title = '';
     public author = '';
-    public genre = 'best young adult';
+    public genre = 'best young adult fiction';
+    nameChange: Subject<string> = new Subject<string>();
 
     constructor() {
     }
@@ -59,5 +61,6 @@ export class StorageService {
 
     public setGenre(scope: any): void {
       this.genre = scope;
+      this.nameChange.next(this.genre);
     }
-}
+  }

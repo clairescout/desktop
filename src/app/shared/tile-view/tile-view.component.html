@@ -8,7 +8,7 @@
               [src]=book.imageLinks.thumbnail />
               <div class="m-0 bg-primary">
                   <h6 class="mt-3 book-title">{{book.title}}</h6>
-                  <mat-card-subtitle class="book-author text-white">{{book.authors[0]}}</mat-card-subtitle>
+                  <mat-card-subtitle *ngIf="book.authors" class="book-author text-white">{{book.authors[0]}}</mat-card-subtitle>
               </div>
             
           </mat-card>
