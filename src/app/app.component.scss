@@ -111,6 +111,18 @@ li:hover {
     background-color: #393e41;
 }
 
+mat-icon {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+::appearance {
+    color: white;
+}
+
 /deep/ md-input-container label {
     color: white !important;
   }
