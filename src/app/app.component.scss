@@ -20,6 +20,33 @@
     display: inline-block;
 }
 
+.logo {
+  float: right;
+  clear: right;
+  padding-left: 7px;
+  max-width: 80px;
+}
+
+h1 {
+    float: left;
+    clear: left;
+    // font-family: 'Cabin', sans-serif;
+    // font-family: 'Shadows Into Light', cursive;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: .5px;
+    font-size: 60px;
+}
+
+h6 {
+  float: left;
+  clear: both;
+  // font-family: 'Cabin', sans-serif;
+  // font-family: 'Shadows Into Light', cursive;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: .8px;
+  font-size: 20px;
+}
+
 // /deep/ .mat-input-underline {
 //     background-color: #FFFFFF !important;    /* replace this color with your accent color hex code */
 // }
@@ -56,6 +83,7 @@ li {
     display: inline-block;
     font: 1em/1.5 sans-serif;
     margin-right: -.25em;
+    margin-bottom: -.25em;
     padding: 0 1.5em;
     position: relative;
     top: 1.25em;
@@ -63,9 +91,14 @@ li {
 
 li:hover {
     cursor: pointer;
+    background-color:#393e41;
 }
 .navbar-nav:hover {
     cursor: pointer;
+}
+
+.nav-item.nav-link.active.text-right {
+    font-size: 25px;
 }
 
 .menu {
@@ -75,7 +108,7 @@ li:hover {
 }
 
 .on-page {
-    background-color: #26A69A;
+    background-color: #393e41;
 }
 
 /deep/ md-input-container label {
