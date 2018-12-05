@@ -98,7 +98,7 @@ li:hover {
 }
 
 .nav-item.nav-link.active.text-right {
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .menu {
@@ -117,6 +117,10 @@ mat-label {
 
 mat-icon {
     color: white;
+}
+
+.name {
+    letter-spacing: 4px;
 }
 
 /deep/ md-input-container label {
