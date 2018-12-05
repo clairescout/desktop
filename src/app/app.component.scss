@@ -111,15 +111,11 @@ li:hover {
     background-color: #393e41;
 }
 
+mat-label {
+    color: white;
+}
+
 mat-icon {
-    color: white;
-}
-
-::placeholder {
-    color: white;
-}
-
-::appearance {
     color: white;
 }
 

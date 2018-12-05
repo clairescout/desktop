@@ -35,7 +35,7 @@ export class AppComponent {
 
   goToSearch() {
     this.storageService.setFromSubmitReview(true);
-    window.location.reload();
+    // window.location.reload(); // why is this here?
     this.router.navigateByUrl('/search');
   }
 

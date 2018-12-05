@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search.component';
-import { MatCardModule, MatProgressSpinnerModule, MatFormFieldModule, MatInputModule, MatProgressBarModule } from '@angular/material';
+import { MatCardModule, MatProgressSpinnerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatProgressBarModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { StorageService } from '../services/storage-service.service';
 
@@ -13,6 +13,7 @@ import { StorageService } from '../services/storage-service.service';
     MatCardModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
+    MatIconModule, 
     MatInputModule,
     MatProgressBarModule
   ],

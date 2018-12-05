@@ -1,7 +1,9 @@
 
 <div class="search-bar-wrapper">
   <mat-form-field appearance="outline" style="width: 45%" class="search-bar ml-2 mr-4">
-    <input matInput style="color: #000000" (keyup.enter)="searchFromComponent($event.target.value)" placeholder="Search">
+    <mat-label>Search</mat-label>
+    <mat-icon matSuffix>search</mat-icon>
+    <input matInput style="color: #000000" (keyup.enter)="searchFromComponent($event.target.value)" placeholder="">
   </mat-form-field>
 </div>
 
