@@ -9,7 +9,9 @@ export class StorageService {
     public fromSubmitReview = false;
     public title = '';
     public author = '';
+    public thumbnail = '';
     public genre = 'best young adult fiction';
+    public hasABook = false; // so submit review knows if there is already a book associated with it or not.
     nameChange: Subject<string> = new Subject<string>();
     searchChange: Subject<string> = new Subject<string>();
 
@@ -57,6 +59,14 @@ export class StorageService {
       this.author = scope;
     }
 
+    public getThumbnail(): string {
+      return this.thumbnail;
+    }
+
+    public setThumbnail(scope: any): void {
+      this.thumbnail = scope;
+    }
+
     public getGenre(): string {
       return this.genre;
     }
@@ -64,5 +74,13 @@ export class StorageService {
     public setGenre(scope: any): void {
       this.genre = scope;
       this.nameChange.next(this.genre);
+    }
+
+    public setHasBook(hasBook) {
+      this.hasABook = hasBook;
+    }
+
+    public hasBook() {
+      return this.hasABook;
     }
   }

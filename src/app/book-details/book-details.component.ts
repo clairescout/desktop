@@ -33,11 +33,9 @@ export class BookDetailsComponent implements OnInit {
     this.loaded = false;
     this.currentIsbn = this.storageService.getIsbn();
     this.httpClient.get(`${this.googleBaseUrl}?isbn:${this.currentIsbn}&key=${this.googleApiKey}`).subscribe( data => {
-      console.log(data);
       const data_string = JSON.stringify(data);
       this.currentBook = JSON.parse(data_string).items[0].volumeInfo;
       this.getTestReviews();
-      console.log(this.currentBook);
       this.loaded = true;
     });
   }
@@ -79,6 +77,8 @@ export class BookDetailsComponent implements OnInit {
     this.storageService.setIsbn(this.currentIsbn);
     this.storageService.setTitle(this.currentBook.title);
     this.storageService.setAuthor(this.currentBook.authors[0]);
+    this.storageService.setThumbnail(this.currentBook.imageLinks.thumbnail);
+    this.storageService.setHasBook(true);
     this.router.navigateByUrl('/submit-review');
   }
 

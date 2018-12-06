@@ -1,6 +1,6 @@
 .container {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
+    // margin: 0 auto; /* Added */
+    // float: none; /* Added */
     margin-bottom: 10px; /* Added */
     margin-top: 8px;
 }
@@ -18,3 +18,52 @@
   /deep/ .mat-slider-thumb-label-text {
     opacity: 1 !important;
   }
+
+  .search-results-wrapper {
+    width: 100%;
+  }
+
+  .result-card {
+    display: flex;
+    justify-content: left;
+    width: 70%;
+    height: 90px;
+  }
+  .result-card:hover {
+    cursor: pointer;
+  }
+
+  .search-result {
+    height: 90px !important;
+    width: 100% !important;
+  }
+
+  .book-title {
+    font-size: 18px;
+  }
+
+  .book-author {
+    font-size: 14px;
+  }
+
+  .result-image {
+    max-height: 85px;
+    max-width: 90px;
+  }
+
+  .mat-menu-panel.my-full-width-menu  {
+    max-width:  none;
+    width: 100% !important;
+  }
+
+//   .mat-menu-panel.notifications-dropdown {
+//     max-width:none;
+//     min-width: 800px; 
+//     margin-left: -8px;
+//     margin-top: 24px;
+//     overflow: visible;
+// }
+
+// .notification-row{
+//     min-width: 800px;
+// }
