@@ -25,7 +25,19 @@ export class SearchComponent implements OnInit {
 
   constructor(private httpClient: HttpClient,
               private storageService: StorageService,
-              private router: Router) { }
+              private router: Router) {
+      //           this.searchValue = storageService.getGenre();
+      // this.searchValue = storageService.nameChange.subscribe((value) => {
+      //   this.searchValue = value;
+      //   this.getBooks(this.storageService.getGenre());
+      // });
+    this.searchField = storageService.getSearchField();
+    this.searchField = storageService.searchChange.subscribe((value) => {
+      this.searchField = value;
+      this.searchField = this.storageService.getSearchField();
+      this.search();
+    });
+ }
 
   ngOnInit() {
     this.initReviews();
@@ -72,7 +84,6 @@ export class SearchComponent implements OnInit {
     // const average = (total / scores.length);
     // return (average / 5) * 100;
     const value = Math.floor(Math.random() * (5 + 1));
-    console.log(value);
     return 75;
   }
 

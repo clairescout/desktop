@@ -47,6 +47,8 @@ export class AppComponent {
     this.storageService.setSearchField(filterValue);
     if (this.router.url !== '/search') {
       this.router.navigateByUrl('/search');
+    } else {
+      // window.location.reload();
     }
   }
 

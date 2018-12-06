@@ -11,6 +11,7 @@ export class StorageService {
     public author = '';
     public genre = 'best young adult fiction';
     nameChange: Subject<string> = new Subject<string>();
+    searchChange: Subject<string> = new Subject<string>();
 
     constructor() {
     }
@@ -29,6 +30,7 @@ export class StorageService {
 
     public setSearchField(scope: any): void {
         this.searchField = scope;
+        this.searchChange.next(this.searchField);
     }
 
     public getFromSubmitReview(): boolean {
