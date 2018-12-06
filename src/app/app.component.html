@@ -27,6 +27,9 @@
 
 <div *ngIf="!isGenrePage" class="bg-primary" style="width: 100%">
     <ul class="text-white navvv pb-0">
+        <li class="navbar-nav pb-0" [class.on-page]="isPage('nyt')" (click)="routeToDashboard()" routerLink="/genres">
+          <a class="nav-item nav-link active">NYT Bestsellers</a>
+        </li>
         <li class="navbar-nav pb-0" [class.on-page]="isPage('ya')" (click)="searchBooks('best young adult books', 'ya')" routerLink="/genres">
           <a class="nav-item nav-link active">Young Adult</a>
         </li>

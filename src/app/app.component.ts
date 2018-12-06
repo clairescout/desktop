@@ -11,7 +11,7 @@ export class AppComponent {
   notSearch = false;
   title = 'desktop';
   isGenrePage = true;
-  theGenre = '';
+  theGenre = 'nyt';
 
   constructor(private storageService: StorageService,
               private router: Router) {
@@ -50,6 +50,11 @@ export class AppComponent {
     } else {
       // window.location.reload();
     }
+  }
+
+  routeToDashboard() {
+    this.theGenre = 'nyt';
+    this.router.navigateByUrl('/dashboard');
   }
 
   searchBooks(string, genre) {
