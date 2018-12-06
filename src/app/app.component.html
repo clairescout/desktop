@@ -20,7 +20,7 @@
     <mat-form-field appearance="outline" class="search-bar" >
       <mat-label>Search</mat-label>
       <mat-icon matSuffix>search</mat-icon>
-      <input matInput style="color: #FFFFFF" (keyup.enter)="search($event.target.value)" placeholder="">
+      <input matInput style="color: #FFFFFF" (click)="$event.target.value=''" (keyup.enter)="search($event.target.value)" placeholder="">
     </mat-form-field>
   </div>
 </nav>

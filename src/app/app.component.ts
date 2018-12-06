@@ -11,7 +11,7 @@ export class AppComponent {
   notSearch = false;
   title = 'desktop';
   isGenrePage = true;
-  theGenre = 'nyt';
+  theGenre = '';
 
   constructor(private storageService: StorageService,
               private router: Router) {
@@ -20,6 +20,9 @@ export class AppComponent {
   ngOnInit() {
     this.checkIsGenreAndSearchPage();
     console.log(this.notSearch);
+    if (this.router.url ==='/dashboard') {
+      this.theGenre = 'nyt';
+    }
   }
 
   checkIsGenreAndSearchPage() {
