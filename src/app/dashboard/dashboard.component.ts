@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
               this.myBooks.push(response.items[0].volumeInfo);
             }
           }
-          if (i < 6 - 1) { // TODO: change 6 to isbns.length
+          if (i < isbns.length - 1) { // TODO: change 6 to isbns.length
             return this.getBooks(isbns, ++i);
           }
         }
