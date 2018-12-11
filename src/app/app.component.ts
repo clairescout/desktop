@@ -18,16 +18,26 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.checkIsGenreAndSearchPage();
-    if (this.router.url ==='/dashboard' || this.router.url === '/') {
-      this.theGenre = 'nyt';
-    }
-    else if (this.router.url ==='/genre') {
-      this.theGenre = 'ya';
-    }
+    (async () => {
+      // Do something before delay
+      console.log('before delay');
+      await this.delay(1000);
+      // Do something after
+      this.checkIsGenreAndSearchPage();
+      if (this.router.url === '/dashboard' || this.router.url === '/') {
+        console.log('HERE');
+        this.theGenre = 'nyt';
+      } else if (this.router.url === '/genres') {
+        console.log('in genre ya');
+        this.theGenre = 'ya';
+      }
+      console.log('after delay');
+    })();
   }
 
   checkIsGenreAndSearchPage() {
+    console.log('is here check');
+    console.log(this.router.url);
     if (this.router.url !== '/genres') {
       console.log('is not genre page!');
       this.isGenrePage = false;
@@ -77,7 +87,12 @@ export class AppComponent {
     return false;
   }
 
+  async delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
   setGenre(current) {
     this.theGenre = current;
   }
+
 }
