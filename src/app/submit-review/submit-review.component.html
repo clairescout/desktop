@@ -7,21 +7,23 @@
           <mat-form-field appearance="outline" style="width: 95%" class="search-bar ml-2 mr-4">
             <mat-label>Search A Book</mat-label>
             <mat-icon matSuffix>search</mat-icon>
-            <input matInput [matMenuTriggerFor]="menu" style="color: #000000" (keyup.enter)="searchFromComponent($event.target.value)" placeholder="">
+            <input matInput #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" style="color: #000000" (keyup.enter)="[searchFromComponent($event.target.value), menuTrigger.openMenu()]" placeholder="">
           </mat-form-field>
         </div>
         <div class="search-results-wrapper" >
-          <mat-menu class="my-full-width-menu" #menu="matMenu">
-            <button  class="search-result d-flex" mat-menu-item *ngFor="let book of searchResults" (click)="setBook(book)">
-              <div class="row">
-                  <img class="col-4 result-image"
-                  [src]=book.volumeInfo.imageLinks.thumbnail />
-                  <div class="col-7">
-                      <h4 class="book-title">{{book.volumeInfo.title}}</h4>
-                      <h5 class="book-author">{{book.volumeInfo.authors[0]}}</h5>
-                  </div>
-              </div>
-            </button>
+          <mat-menu #menu="matMenu" yPosition="below" [overlapTrigger]="false" class="my-full-width-menu" >
+            <div *ngFor="let book of searchResults">
+              <button *ngIf="book.volumeInfo.imageLinks" class="search-result d-flex" mat-menu-item  (click)="setBook(book)">
+                <div class="row">
+                    <img  class="col-4 result-image"
+                    [src]=book.volumeInfo.imageLinks.thumbnail />
+                    <div class="col-7">
+                        <h4 class="book-title">{{book.volumeInfo.title}}</h4>
+                        <h5 class="book-author">{{book.volumeInfo.authors[0]}}</h5>
+                    </div>
+                </div>
+              </button>
+            </div>
           </mat-menu>
         </div>
       </div>

@@ -57,11 +57,14 @@
   .mat-menu-panel.my-full-width-menu  {
     max-width:  none;
     width: 100% !important;
+    max-height: 420px;
+    overflow-y: auto;
   }
 
   .padding {
     padding-top: 50px;
   }
+
 
 //   .mat-menu-panel.notifications-dropdown {
 //     max-width:none;

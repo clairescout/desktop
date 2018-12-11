@@ -63,10 +63,9 @@ export class SubmitReviewComponent implements OnInit {
   search(searchValue) {
     this.searchResults = [];
 
-    this.httpClient.get(`${this.googleBaseUrl}${searchValue}&key=${this.googleApiKey}`).subscribe( data => {
+    this.httpClient.get(`${this.googleBaseUrl}${searchValue}&maxResults=20&key=${this.googleApiKey}`).subscribe( data => {
       const data_string = JSON.stringify(data);
       this.searchResults = JSON.parse(data_string).items;
-      console.log(this.searchResults);
       this.hasResults = true;
     });
   }
