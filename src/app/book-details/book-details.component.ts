@@ -49,10 +49,14 @@ export class BookDetailsComponent implements OnInit {
 
   getTestReviews() {
     this.reviews = [
-      {title: 'Violence', scores: [4, 4, 4, 4, 5], reviews: ['lots of violence', 'shooting and guns and punching']},
-      {title: 'Sex', scores: [1, 1, 2, 4, 1], reviews: ['A man and a woman talk about having sex', 'A naked man']},
-      {title: 'Language', scores: [3, 3, 3, 3, 3], reviews: ['a few cuss words', 'typical usual cussing']},
-      {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2], reviews: ['one character has a glass of wine']},
+      {title: 'Violence', scores: [4, 4, 4, 4, 5], reviews: ['Two characters get into a heated fist fight at a bar.',
+        'Some fighting, not too bad']},
+      {title: 'Sex', scores: [1, 1, 2, 4, 1], reviews: ['Many sexual innuendos, but nothing graphic.',
+        'Some sexual content, probably not appropriate for younger kids.']},
+      {title: 'Language', scores: [3, 3, 3, 3, 3], reviews: ['This book had a couple of f-words, and some other swearing throughout.',
+        'Due to language, this is definitely not a book for children. Lots of swearing, and some crude jokes.']},
+      {title: 'Drugs/Alcohol', scores: [2, 2, 2, 2, 2], reviews: ['No drugs, but characters drink alcohol to escape their problems.',
+        'Occasional drinking is mentioned.']},
     ];
     const review = localStorage.getItem(this.currentBook.title);
     if (review) {
