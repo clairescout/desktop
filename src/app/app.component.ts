@@ -19,9 +19,11 @@ export class AppComponent {
 
   ngOnInit() {
     this.checkIsGenreAndSearchPage();
-    console.log(this.notSearch);
     if (this.router.url ==='/dashboard' || this.router.url === '/') {
       this.theGenre = 'nyt';
+    }
+    else if (this.router.url ==='/genre') {
+      this.theGenre = 'ya';
     }
   }
 
@@ -68,6 +70,8 @@ export class AppComponent {
 
   isPage(current) {
     if (this.theGenre === current) {
+      console.log('current ' + current);
+      console.log('this.router.url ' + this.router.url);
       return true;
     }
     return false;
