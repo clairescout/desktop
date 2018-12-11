@@ -20,15 +20,12 @@ export class AppComponent {
   ngOnInit() {
     (async () => {
       // Do something before delay
-      console.log('before delay');
       await this.delay(1000);
       // Do something after
       this.checkIsGenreAndSearchPage();
       if (this.router.url === '/dashboard' || this.router.url === '/') {
-        console.log('HERE');
         this.theGenre = 'nyt';
       } else if (this.router.url === '/genres') {
-        console.log('in genre ya');
         this.theGenre = 'ya';
       }
       console.log('after delay');
@@ -36,14 +33,10 @@ export class AppComponent {
   }
 
   checkIsGenreAndSearchPage() {
-    console.log('is here check');
-    console.log(this.router.url);
     if (this.router.url !== '/genres') {
-      console.log('is not genre page!');
       this.isGenrePage = false;
     }
     if (this.router.url === '/search') {
-      console.log('is search');
       this.notSearch = false;
     }
   }
@@ -80,8 +73,6 @@ export class AppComponent {
 
   isPage(current) {
     if (this.theGenre === current) {
-      console.log('current ' + current);
-      console.log('this.router.url ' + this.router.url);
       return true;
     }
     return false;
