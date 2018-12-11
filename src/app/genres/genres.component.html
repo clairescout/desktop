@@ -20,5 +20,7 @@
         </li>
       </ul>
 </div> -->
-<mat-spinner style="margin:10px auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
-<app-tile-view *ngIf="loaded" [myBooks]="myBooks" [reviews]="reviews"></app-tile-view>
+<div class="body">
+  <mat-spinner style="margin:10px auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
+  <app-tile-view *ngIf="loaded" [myBooks]="myBooks" [reviews]="reviews"></app-tile-view>
+</div>

@@ -1,38 +1,40 @@
+<div class="body">
+  <div class="search-bar-wrapper">
+    <mat-form-field appearance="outline" style="width: 45%" class="search-bar ml-2 mr-4">
+      <mat-label>Search</mat-label>
+      <mat-icon matSuffix>search</mat-icon>
+      <input matInput style="color: #000000" (click)="$event.target.value=''" (keyup.enter)="searchFromComponent($event.target.value)" placeholder="">
+    </mat-form-field>
+  </div>
 
-<div class="search-bar-wrapper">
-  <mat-form-field appearance="outline" style="width: 45%" class="search-bar ml-2 mr-4">
-    <mat-label>Search</mat-label>
-    <mat-icon matSuffix>search</mat-icon>
-    <input matInput style="color: #000000" (click)="$event.target.value=''" (keyup.enter)="searchFromComponent($event.target.value)" placeholder="">
-  </mat-form-field>
-</div>
+  <mat-spinner class="spinner mt-5" style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
 
-<mat-spinner class="spinner mt-5" style="margin:0 auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
-
-<div class="mt-2 results-wrapper" *ngIf="loaded" >
-  <mat-grid-list cols="1" gutterSize="10px" rowHeight="250px">
-    <mat-grid-tile *ngFor="let book of searchResults">
-      <mat-card class="result-card mb-3" *ngIf="book.volumeInfo.imageLinks" (click)="goToNextComponent(book.volumeInfo)">
-        <img class="result-image"
-          [src]=book.volumeInfo.imageLinks.thumbnail />
-        <div class="book-info">
-          <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.title}}</mat-card-subtitle>
-          <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.authors[0]}}</mat-card-subtitle>
-          <mat-card-subtitle class="book-info-secondary">{{book.volumeInfo.description}}</mat-card-subtitle>
-          <div class="content-ratings">
-            <mat-card *ngFor="let review of reviews"  style="padding: 8px !important;" class="content-card m-1">
-              <mat-card-subtitle  style="text-align:left !important;">{{review.title}}</mat-card-subtitle>
-                  <mat-progress-bar
-                  aria-label=`${review.title}-rating`
-                  mode="determinate"
-                  [value]="getRating(review)">
-                  </mat-progress-bar>
-            </mat-card>
+  <div class="mt-2 results-wrapper" *ngIf="loaded" >
+    <mat-grid-list cols="1" gutterSize="10px" rowHeight="250px">
+      <mat-grid-tile *ngFor="let book of searchResults">
+        <mat-card class="result-card mb-3" *ngIf="book.volumeInfo.imageLinks" (click)="goToNextComponent(book.volumeInfo)">
+          <img class="result-image"
+            [src]=book.volumeInfo.imageLinks.thumbnail />
+          <div class="book-info">
+            <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.title}}</mat-card-subtitle>
+            <mat-card-subtitle class="book-info-primary">{{book.volumeInfo.authors[0]}}</mat-card-subtitle>
+            <mat-card-subtitle class="book-info-secondary">{{book.volumeInfo.description}}</mat-card-subtitle>
+            <div class="content-ratings">
+              <mat-card *ngFor="let review of reviews"  style="padding: 8px !important;" class="content-card m-1">
+                <mat-card-subtitle  style="text-align:left !important;">{{review.title}}</mat-card-subtitle>
+                    <mat-progress-bar
+                    aria-label=`${review.title}-rating`
+                    mode="determinate"
+                    [value]="getRating(review)">
+                    </mat-progress-bar>
+              </mat-card>
+            </div>
           </div>
-        </div>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
 </div>
 
 <div class="padding"></div>

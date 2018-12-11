@@ -20,7 +20,7 @@ export class AppComponent {
   ngOnInit() {
     this.checkIsGenreAndSearchPage();
     console.log(this.notSearch);
-    if (this.router.url ==='/dashboard') {
+    if (this.router.url ==='/dashboard' || this.router.url === '/') {
       this.theGenre = 'nyt';
     }
   }

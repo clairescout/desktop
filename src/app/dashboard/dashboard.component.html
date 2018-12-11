@@ -1,31 +1,31 @@
-<mat-spinner class=".spinner" style="margin:10px auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
-<!-- <div class="book-wrapper" *ngIf="loaded" >
-  <mat-grid-list class="ml-3 mr-3" cols="3" gutterSize="10px" rowHeight="400px">
-    <mat-grid-tile class="view-first" *ngFor="let book of myBooks">
-      <mat-card class="book-card pl-0 pr-0" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
-        <img class="book-image"
-          [src]=book.imageLinks.thumbnail />
-          <div class="m-0 bg-primary ">
-              <h6 class="mt-3 book-title">{{book.title}}</h6>
-              <mat-card-subtitle class="book-author text-white" style="margin-top:0 !important">{{book.authors[0]}}</mat-card-subtitle>
-          </div>
+<div class="body">
+  <mat-spinner class=".spinner" style="margin:10px auto;" mode="indeterminate" *ngIf="!loaded"></mat-spinner>
+  <!-- <div class="book-wrapper" *ngIf="loaded" >
+    <mat-grid-list class="ml-3 mr-3" cols="3" gutterSize="10px" rowHeight="400px">
+      <mat-grid-tile class="view-first" *ngFor="let book of myBooks">
+        <mat-card class="book-card pl-0 pr-0" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
+          <img class="book-image"
+            [src]=book.imageLinks.thumbnail />
+            <div class="m-0 bg-primary ">
+                <h6 class="mt-3 book-title">{{book.title}}</h6>
+                <mat-card-subtitle class="book-author text-white" style="margin-top:0 !important">{{book.authors[0]}}</mat-card-subtitle>
+            </div>
 
-      </mat-card>
-      <mat-card class="book-card-mask bg-shade p-0" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
-        <mat-card *ngFor="let review of reviews" class="content-card m-1 mt-2">
-          <mat-card-subtitle style="text-align:left !important;">{{review.title}}</mat-card-subtitle>
-              <mat-progress-bar
-              aria-label=`${review.title}-rating`
-              mode="determinate"
-              [value]="getRating(review)">
-              </mat-progress-bar>
         </mat-card>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div> -->
-<app-tile-view *ngIf="loaded" [myBooks]="myBooks" [reviews]="reviews"></app-tile-view>
+        <mat-card class="book-card-mask bg-shade p-0" *ngIf="book.imageLinks" (click)="goToBookDetails(book)">
+          <mat-card *ngFor="let review of reviews" class="content-card m-1 mt-2">
+            <mat-card-subtitle style="text-align:left !important;">{{review.title}}</mat-card-subtitle>
+                <mat-progress-bar
+                aria-label=`${review.title}-rating`
+                mode="determinate"
+                [value]="getRating(review)">
+                </mat-progress-bar>
+          </mat-card>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div> -->
+  <app-tile-view *ngIf="loaded" [myBooks]="myBooks" [reviews]="reviews"></app-tile-view>
 
+</div>
 <img class="nyt" src="../assets/images/nyt.png" />
-
-<!-- <img src="nyt.ico" /> -->
